@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(octomap REQUIRED)
+find_package(HDF5 REQUIRED)
 
 add_message_files(
  FILES
@@ -43,6 +44,8 @@ catkin_package(
     roscpp
   CATKIN_DEPENDS message_runtime 
 )
+
+link_directories("/usr/lib/x86_64-linux-gnu/hdf5/openmpi" "~/catkin_ws/devel/lib")
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${OCTOMAP_INCLUDE_DIRS} ${HDF5_INCLUDE_DIR} ${PCL_INCLUDE_DIR})
 
